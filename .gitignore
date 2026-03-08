@@ -22,3 +22,15 @@ logs/
 # OS
 Thumbs.db
 .DS_Store
+
+# Support Files
+PhpMyAdmin*.pdf
+
+# Images & Screenshots
+*.png
+*.jpg
+*.jpeg
+*.gif
+screenshot_*.png
+QR-WEBAPP2.png
+offizieller_QR_Code.png
