@@ -1,0 +1,22 @@
+# ============================================================
+# .htaccess für den Ordner /scan/  (eine Ebene ÜBER QR_WebApp)
+# Diese Datei muss ALS .htaccess direkt in den /scan/-Ordner
+# auf dem Server hochgeladen werden.
+# ============================================================
+
+Options -Indexes
+
+# --- JSON-Dateien für HTTP-Zugriff sperren ---
+# PHP-Skripte auf dem Server können die Datei weiterhin über
+# das Dateisystem (file_get_contents etc.) lesen – nur der
+# direkte Browser-Abruf wird geblockt.
+<FilesMatch "\.json$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Gleiche Behandlung für andere sensible Dateitypen
+<FilesMatch "\.(md|log|sql|sh|env|bak|cfg|ini)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
